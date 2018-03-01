@@ -8,11 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		41501F002047FEC600A3515A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41501EFF2047FEC600A3515A /* AppDelegate.swift */; };
-		41501F022047FEC600A3515A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41501F012047FEC600A3515A /* ViewController.swift */; };
 		41501F052047FEC600A3515A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41501F032047FEC600A3515A /* Main.storyboard */; };
 		41501F072047FEC600A3515A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41501F062047FEC600A3515A /* Assets.xcassets */; };
 		41501F0A2047FEC600A3515A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41501F082047FEC600A3515A /* LaunchScreen.storyboard */; };
 		41501F152047FEC600A3515A /* SampleMvpAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41501F142047FEC600A3515A /* SampleMvpAppTests.swift */; };
+		41501F212047FFEF00A3515A /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41501F202047FFEF00A3515A /* Person.swift */; };
+		41501F242048014D00A3515A /* PersonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41501F232048014D00A3515A /* PersonService.swift */; };
+		41501F272048066F00A3515A /* PersonPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41501F262048066F00A3515A /* PersonPresenter.swift */; };
+		41501F2A204806CE00A3515A /* PersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41501F29204806CE00A3515A /* PersonView.swift */; };
+		41501F2D204809D200A3515A /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41501F2C204809D200A3515A /* PersonViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +32,6 @@
 /* Begin PBXFileReference section */
 		41501EFC2047FEC600A3515A /* SampleMvpApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleMvpApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41501EFF2047FEC600A3515A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		41501F012047FEC600A3515A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		41501F042047FEC600A3515A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		41501F062047FEC600A3515A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		41501F092047FEC600A3515A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -36,6 +39,11 @@
 		41501F102047FEC600A3515A /* SampleMvpAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleMvpAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		41501F142047FEC600A3515A /* SampleMvpAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleMvpAppTests.swift; sourceTree = "<group>"; };
 		41501F162047FEC600A3515A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41501F202047FFEF00A3515A /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		41501F232048014D00A3515A /* PersonService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonService.swift; sourceTree = "<group>"; };
+		41501F262048066F00A3515A /* PersonPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonPresenter.swift; sourceTree = "<group>"; };
+		41501F29204806CE00A3515A /* PersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonView.swift; sourceTree = "<group>"; };
+		41501F2C204809D200A3515A /* PersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,9 +85,13 @@
 		41501EFE2047FEC600A3515A /* SampleMvpApp */ = {
 			isa = PBXGroup;
 			children = (
-				41501EFF2047FEC600A3515A /* AppDelegate.swift */,
-				41501F012047FEC600A3515A /* ViewController.swift */,
+				41501F2B2048099400A3515A /* Controller */,
+				41501F252048065900A3515A /* Presenter */,
+				41501F1F2047FFD300A3515A /* Models */,
+				41501F28204806B000A3515A /* Protocol */,
+				41501F222048013900A3515A /* Services */,
 				41501F032047FEC600A3515A /* Main.storyboard */,
+				41501EFF2047FEC600A3515A /* AppDelegate.swift */,
 				41501F062047FEC600A3515A /* Assets.xcassets */,
 				41501F082047FEC600A3515A /* LaunchScreen.storyboard */,
 				41501F0B2047FEC600A3515A /* Info.plist */,
@@ -94,6 +106,46 @@
 				41501F162047FEC600A3515A /* Info.plist */,
 			);
 			path = SampleMvpAppTests;
+			sourceTree = "<group>";
+		};
+		41501F1F2047FFD300A3515A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				41501F202047FFEF00A3515A /* Person.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		41501F222048013900A3515A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				41501F232048014D00A3515A /* PersonService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		41501F252048065900A3515A /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				41501F262048066F00A3515A /* PersonPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		41501F28204806B000A3515A /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				41501F29204806CE00A3515A /* PersonView.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		41501F2B2048099400A3515A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				41501F2C204809D200A3515A /* PersonViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,7 +251,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41501F022047FEC600A3515A /* ViewController.swift in Sources */,
+				41501F242048014D00A3515A /* PersonService.swift in Sources */,
+				41501F2D204809D200A3515A /* PersonViewController.swift in Sources */,
+				41501F212047FFEF00A3515A /* Person.swift in Sources */,
+				41501F272048066F00A3515A /* PersonPresenter.swift in Sources */,
+				41501F2A204806CE00A3515A /* PersonView.swift in Sources */,
 				41501F002047FEC600A3515A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

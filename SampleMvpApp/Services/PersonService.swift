@@ -1,5 +1,5 @@
 //
-//  UserService.swift
+//  PersonService.swift
 //  SampleMvpApp
 //
 //  Created by Dima Yarmolchuk on 3/1/18.
@@ -10,32 +10,32 @@ import Foundation
 
 // MARK: Protocol
 
-protocol UserService {
-    func getPersons(callBack:([Person]) -> Void)
+protocol PersonService {
+    func getPersons(callBack:@escaping ([Person]) -> Void)
 }
 
 // MARK: Implementation
 
-private final class UserServiceImpl: UserService {
+private final class PersonServiceImpl: PersonService {
     //the service delivers mocked data with a delay
-    func getUsers(callBack:([User]) -> Void){
-        let users = [User(firstName: "Iyad", lastName: "Agha", email: "iyad@test.com", age: 36),
-                     User(firstName: "Mila", lastName: "Haward", email: "mila@test.com", age: 24),
-                     User(firstName: "Mark", lastName: "Astun", email: "mark@test.com", age: 39)
-        ]
-        
-        let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(2 * Double(NSEC_PER_SEC)))
-        dispatch_after(delayTime, dispatch_get_main_queue()) {
-            callBack(users)
+    func getPersons(callBack:@escaping ([Person]) -> Void) {
+        let persons = [ Person(firstName: "Valentino", lastName: "Rossi", email: "iyad@test.com", age: 39),
+                        Person(firstName: "Johann", lastName: "Zarco", email: "mila@test.com", age: 23),
+                        Person(firstName: "Danilo", lastName: "Petrucci", email: "mark@test.com", age: 29),
+                        Person(firstName: "Maverick", lastName: "Viñales", email: "mila@test.com", age: 25),
+                        Person(firstName: "Dani", lastName: "Pedrosa", email: "mark@test.com", age: 31) ]
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            callBack(persons)
         }
     }
 }
 
-//// MARK: Factory
-//
-//final class UserServiceFactory {
-//    static func `default`() -> UserService {
-//        return UserServiceImpl()
-//    }
-//}
+// MARK: Factory
+
+final class PersonServiceFactory {
+    static func `default`() -> PersonService {
+        return PersonServiceImpl()
+    }
+}
 

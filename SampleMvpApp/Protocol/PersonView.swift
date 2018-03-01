@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+protocol PersonView: NSObjectProtocol {
+    func startLoading()
+    func finishLoading()
+    
+    func setPersons(persons: [PersonViewData])
+    func setEmptyPersons()
+}
