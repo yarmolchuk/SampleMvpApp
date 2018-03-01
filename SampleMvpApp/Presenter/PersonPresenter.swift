@@ -29,13 +29,13 @@ final class PersonPresenter {
         personView = nil
     }
         
-    func getPerson() -> Void {
+    func getPersons() {
         self.personView?.startLoading()
         
         personService.getPersons { [weak self] persons in
             self?.personView?.finishLoading()
             
-            if (persons.isEmpty) {
+            if persons.isEmpty {
                 self?.personView?.setEmptyPersons()
             } else {
                 let mappedPersons = persons.map {

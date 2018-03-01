@@ -25,7 +25,7 @@ final class PersonViewController: UIViewController {
         activityIndicator?.hidesWhenStopped = true
         
         personPresenter.attachView(view: self)
-        personPresenter.getPerson()
+        personPresenter.getPersons()
     }
     
     private func configureTableView() {
@@ -34,7 +34,7 @@ final class PersonViewController: UIViewController {
     }
     
     private func configureNavigationBar() {
-        self.title = "Riders"
+        self.title = "Persons"
     }
 }
 
@@ -48,12 +48,11 @@ extension PersonViewController: PersonView {
         activityIndicator?.stopAnimating()
     }
     
-    func setPersons(persons: [PersonViewData]) -> Void {
+    func setPersons(persons: [PersonViewData]) {
         personsToDisplay = persons
         tableView?.isHidden = false
         emptyView?.isHidden = true;
         tableView?.reloadData()
-
     }
     
     func setEmptyPersons() {
